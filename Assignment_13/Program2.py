@@ -1,27 +1,27 @@
 '''
-    2. Write a program which accepts one number and prints its factors.
-    Input: 12
-    Output: 1 2 3 4 6 12
+    2. Write a program which accepts radius of circle and prints area of circle.
 
 '''
 
+from math import pi
 
-def DisplayFactors(No):
+def CircleArea(rad):
+    Area = 0
 
-    for i in range(1,(No//2)+1):
-        if((No % i) == 0):
-            print(i,end=" ")
+    Area = pi * rad * rad
 
-    print(No)
+    return Area
 
-    
 def main():
-    Value = 0
+    Radius = 0.0
+    Ret = 0.0
+    
+    print("Enter the radius of circle : ")
+    Radius = float(input())
 
-    print("Enter the number : ")
-    Value = int(input())
+    Ret = CircleArea(Radius)
 
-    DisplayFactors(Value)
+    print("Area of Circle is :", Ret)
 
 if __name__ == "__main__":
     main()
