@@ -1,52 +1,36 @@
 '''
-    3. Write a program which accepts two numbers and prints addition, subtraction,
-    multiplication and division.
-
+    3. Write a program which accepts one number and checks whether it is perfect number or not.
+    Input: 6
+    Output: Perfect Number
 '''
 
-def Addition(No1, No2):
-    Ans = 0
-    Ans = No1 + No2
-    return Ans
+def ChkPerfect(No):
+    Sum = 0
 
+    for i in range(1,(No//2)+1):
+        if((No % i) == 0):
+            Sum = Sum + i
 
-def Substraction(No1, No2):
-    Ans = 0
-    Ans = No1 - No2
-    return Ans
-
-def Multiplication(No1, No2):
-    Ans = 1
-    Ans = No1 * No2
-    return Ans
-
-def Division(No1, No2):
-    Ans = 1
-    Ans = No1 / No2
-    return Ans
+    print(Sum)
+    if(Sum == No):
+        return True
+    else:
+        return False
 
 def main():
-    Value1 = 0
-    Value2 = 0
-    Ret = 0
+    Value = 0
+    Ret = False
 
-    print("Enter first number : ")
-    Value1 = int(input())
+    print("Enter the number : ")
+    Value = int(input())
 
-    print("Enter second number : ")
-    Value2 = int(input())
+    Ret = ChkPerfect(Value)
 
-    Ret = Addition(Value1,Value2)
-    print("Addition is : ",Ret)
+    if(Ret == True):
+        print(Value,"is perfect Number")
 
-    Ret = Substraction(Value1,Value2)
-    print("Substraction is : ",Ret)
-    
-    Ret = Multiplication(Value1,Value2)
-    print("Multiplication is : ",Ret)
-    
-    Ret = Division(Value1,Value2)
-    print("Division is : ",Ret)
+    else:
+        print(Value,"is Not a perfect Number")
 
 if __name__ == "__main__":
     main()
